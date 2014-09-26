@@ -1,0 +1,54 @@
+LaTeX Kurs - Gliederung
+
+1 Begrüßung (Essen organisieren)
+
+2 Einleitung in LaTeX / Konzept (WYSIWYM, Vorteile/Nachteile von LaTeX) / Geschichte / erste Beispiele / Editoren (TexWorks, TexMaker)
+
+3 Einführung in LaTeX
+3.1 Schrittweise Dokument aufbauen (documentclass [scrarctl, scrrpt, scrbooks], begin/end document, maketitle, tableofcontents)
+3.2 Gliederung (sctions/chapters/...)
+3.3 Standardpakete (inputenc, babel, amsmath, amsfonts, amssymb, graphicx, geometry, blindtext, hyperref, sagetex)
+3.4 KOMA-Fußzeilen/Kopfzeilen
+
+------------------------------------------------
+AB HIER IMMER ZUERST INFOTEIL DANN KURZE AUFGABE
+------------------------------------------------
+
+4 Umgebungen
+    4.1 Matheumgebungen (Newcommand, nicefrac, Referenz)
+    4.2 Aufzählungen (enumerate [mit Paket enumerate lokal Aufzählungszeichen ändern], itemize)
+    4.3 Tabellen (topline, midline, bottomline, p{...}, centering)
+    4.4 Fußnoten (nur ganz kurz)
+    4.5 Figuren: importieren einer Grafik (draft, subfigure). Mit graphicspath Überleitung zum nächsten Thema.
+
+5 Wie mache ich ein großes Dokument übersichtlich? (Ordnerstruktur, input/include, evtl. Seminar von Florian vorführen)
+6 Bibliographie mit biber (bibtex-Eintrag von arXiv, Heidi und Google Scholar)
+
+7 nützliche Pakete
+    7.1 setspace (für z.B. doppelten Zeilenabstand)
+    7.2 csquotes
+    7.3 amsthm
+    7.4 mdframed
+    7.5 listings
+
+8 weitere Pakete
+    8.1 Beamer (ist eigentlich kein Paket)
+    8.2 TikZ (Mindmaps, Daten einlesen)
+
+1 Philipp         5 min
+2 Florian         10 min
+3 Philipp         1 h 
+4.1/4.2 Philipp   1 h
+4.3-4.4 Florian   30 min
+4.5-5/6 Florian   1 h
+7 Philipp         30 min
+8 Philipp         1 h
+-----------------------------
+                  5:15 h
+
+Mail an alle:
+Infos zur TeX Live Installation
+Pizza essen
+
+Organisation:
+- Dateien für Kursteilnehmer über Dropbox Ordner zur Verfügung stellen
