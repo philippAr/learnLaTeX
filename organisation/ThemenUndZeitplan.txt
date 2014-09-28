@@ -30,6 +30,7 @@ AB HIER IMMER ZUERST INFOTEIL DANN KURZE AUFGABE
     7.3 amsthm
     7.4 mdframed
     7.5 listings
+    7.6 Feynman Diagramme
 
 8 weitere Pakete
     8.1 Beamer (ist eigentlich kein Paket)
