@@ -8,7 +8,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
- build/
+build/
 develop-eggs/
 dist/
 downloads/
@@ -61,6 +61,6 @@ target/
 *.snm
 *.out
 *latexmk
-
+*.swp
 # ignore apple files
 .DS_Store
