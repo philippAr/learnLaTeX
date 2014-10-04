@@ -1,4 +1,27 @@
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+Übersicht
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+01 Begrüßung                    P   fertig
+02 Einleitung und Konzept       F   
+03 Einführung                   P   
+04 Umgebungen
+    Mathe/Aufzählungen          P
+    Tabellen/Fußnoten/Figuren   F
+05 Workflow                     F
+06 Bibliographie                F
+07 Nützliche Pakete             P
+08 Weitere Pakete               P
+
+
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
 LaTeX Kurs - Gliederung
+--------------------------------------------------------------------
+--------------------------------------------------------------------
 
 1 Begrüßung (Essen organisieren)
 
@@ -52,4 +75,4 @@ Infos zur TeX Live Installation
 Pizza essen
 
 Organisation:
-- Dateien für Kursteilnehmer über Dropbox Ordner zur Verfügung stellen
+- Dateien für Kursteilnehmer über Dropbox Ordner oder Github zur Verfügung stellen
