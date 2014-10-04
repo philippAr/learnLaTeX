@@ -60,3 +60,7 @@ target/
 *.nav
 *.snm
 *.out
+*latexmk
+
+# ignore apple files
+.DS_Store
