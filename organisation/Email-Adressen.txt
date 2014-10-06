@@ -1,7 +1,19 @@
 Email-Adressen
 
-felix.herrmann2@gmx.de, l.heyen@gmx.de, christianekm@web.de, gloriakoepke@gmail.com, rurelf@gmail.com, Marjanovic@stud.uni-heidelberg.de, L.Pilz@stud.uni-heidelberg.de, josua.schilling@gmx.de, sebi.voll@hotmail.de, tz.mailbox@online.de, david-kalb@hotmail.de, alvaro.troya.ec@googlemail.com, j.schoenbohm@gmx.de, rodrigo_rm_94@hotmail.com, M.Schreiber@stud.uni-heidelberg.de, Vera-Roesler@gmx.de, alina.muerwald@gmx.de, rabea.link@web.de, lena.herrmann07@web.de, lisa.baltes@gmx.de, carla.roesch@web.de, eneswitwit@live.de, arthur@ah-software.de
+felix.herrmann2@gmx.de, l.heyen@gmx.de, christianekm@web.de, gloriakoepke@gmail.com, rurelf@gmail.com, Marjanovic@stud.uni-heidelberg.de, L.Pilz@stud.uni-heidelberg.de, josua.schilling@gmx.de, sebi.voll@hotmail.de, tz.mailbox@online.de, david-kalb@hotmail.de, alvaro.troya.ec@googlemail.com, j.schoenbohm@gmx.de, rodrigo_rm_94@hotmail.com, M.Schreiber@stud.uni-heidelberg.de, Vera-Roesler@gmx.de, alina.muerwald@gmx.de, rabea.link@web.de, lena.herrmann07@web.de, lisa.baltes@gmx.de, carla.roesch@web.de, eneswitwit@live.de, arthur@ah-software.de, quzum19lu@gmail.com
 
+Hallo zusammen,
 
-Anastasia Demikhovskaya
-Gülsüm Tokmak
+so langsam rückt unser LaTeX-Kurs näher und um die Vorfreude noch zu steigern, kommen hier genauere Informationen.
+
+- Wir starten am kommenden Samstag um 10 Uhr s.t. im Keller vom URZ.
+- An Wochenenden in den Ferien hat das Botanik nicht geöffnet. Deshalb würde ich vorschlagen, dass wir uns Pizza bestellen. Wer sich daran beteiligen möchte, bringe bitte Geld mit.
+- Wer die Beispiele im Kurs direkt auf dem eigenen Rechner ausprobieren möchte, kann gerne einen Laptop mitbringen. Es müsste installiert sein: eine TeXLive-Full-Distribution (nicht von der Dateigröße abschrecken lassen. Ja, das sind mehrere Gigabytes^^) und ein vernünftiger Editor (texmaker, sublime text 3, vim o.ä.).
+- Dummerweise ist aus irgendeinem mysteriösen Grund eine Mail verloren gegangen, sodass ich die Email-Adresse von einer Teilnehmerin nicht mehr habe: Anastasia Demikhovskaya. Kennt sie jemand? Wenn ja, wäre es sehr freundlich, sie und mich kurz zu informieren.
+- Und der Spaß-Teil zum Schluss: Ich schlage vor, dass wir am Abend nach dem Kurs noch etwas zusammen machen. Wir könnten uns so gegen 20 Uhr irgendwo treffen um etwas zu trinken und danach noch feiern gehen. Ich stelle mir das als Abschluss des Kurses und Start ins Semester sehr lustig vor. Bei Interesse haltet euch doch einfach den Abend frei und die genauere Planung machen wir in der Mittagspause.
+
+Wer Fragen zur Organisation hat, kann sich gerne per Mail melden!
+Florian und ich freuen uns auf euch!
+
+Viele Grüße
+Philipp
