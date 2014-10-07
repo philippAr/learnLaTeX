@@ -62,5 +62,6 @@ target/
 *.out
 *latexmk
 *.swp
+*.vrb
 # ignore apple files
 .DS_Store
