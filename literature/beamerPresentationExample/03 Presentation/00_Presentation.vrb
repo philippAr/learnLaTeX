@@ -1,0 +1,20 @@
+\frametitle{Compute Codimension}
+\begin{lstlisting}
+inters1pr = inters1.minAssGTZ();
+inters2pr = inters2.minAssGTZ();
+inters3pr = inters3.minAssGTZ();
+inters4pr = inters4.minAssGTZ();
+inters5pr = inters5.minAssGTZ();
+inters6pr = inters6.minAssGTZ();
+inters61pr = inters61.minAssGTZ();
+
+inters1pr[1].std().dim()  # -> codim 3
+inters2pr[1].std().dim()  # -> codim 3
+inters3pr[1].std().dim()  # -> codim 3
+inters3pr[2].std().dim()  # -> codim 4 # wrong codim
+inters4pr[1].std().dim()  # -> codim 3
+inters5pr[1].std().dim()  # -> codim 3
+inters6pr[1].std().dim()  # -> codim 3
+inters61pr[1].std().dim() # -> codim 3
+inters61pr[2].std().dim() # -> codim 4 # wrong codim
+\end{lstlisting}

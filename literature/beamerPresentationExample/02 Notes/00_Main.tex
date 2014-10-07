@@ -1,0 +1,737 @@
+\documentclass[11pt,a4paper,english]{scrartcl}
+
+%_______________________________________________________________________________
+% packages
+%_______________________________________________________________________________
+\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage{amsmath,amsfonts,amssymb, nicefrac}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{booktabs,array,ragged2e}
+\usepackage{graphicx,subfigure}
+\usepackage{fancyvrb}
+
+\graphicspath{{./pics/}}
+
+\usepackage{tikz}
+\usetikzlibrary[decorations.pathmorphing]
+
+\usepackage{spverbatim}
+
+
+%_______________________________________________________________________________
+% Listings
+%_______________________________________________________________________________
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+%  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize,        % the size of the fonts that are used for the codew
+breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+%  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+%  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+%  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+%  language=Octave,                 % the language of the code
+%  morekeywords={*,...},            % if you want to add more keywords to the set
+%  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+%  numbersep=5pt,                   % how far the line-numbers are from the code
+%  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+%  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+%  showstringspaces=false,          % underline spaces within strings only
+%  showtabs=false,                  % show tabs within strings adding particular underscores
+%  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+%  tabsize=2,                       % sets default tabsize to 2 spaces
+%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+%_______________________________________________________________________________
+% amsthm
+%_______________________________________________________________________________
+\usepackage{amsthm}
+%\newtheorem{defn}{Definition}[section]
+\newtheorem{defn}{Definition}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{ex}[defn]{Example}
+
+\usepackage[backend=biber,style=alphabetic]{biblatex}
+\addbibresource{bib_phys.bib} 
+\addbibresource{bib_math.bib} 
+
+%_______________________________________________________________________________
+% page borders
+%_______________________________________________________________________________
+%\addtolength{\headheight}{2cm}
+%%\addtolength{\topmargin}{2cm}
+%\setlength{\oddsidemargin}{1.0cm}
+%\setlength{\evensidemargin}{0.5cm}
+%\setlength{\textwidth}{14.3cm}
+%%\setlength{\textheight}{24cm}
+
+%\usepackage[left=3.5cm,right=2cm,top=2.5cm,bottom=2cm]{geometry}
+\usepackage[left=3.5cm,right=2cm,top=3cm,bottom=3cm]{geometry} % sieht schonmal ganz gut aus
+\usepackage[onehalfspacing]{setspace}
+
+
+\setlength{\parindent}{0mm}
+
+
+\usepackage{fancyhdr} %Paket laden
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{\nouppercase{\leftmark}} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\thepage} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+%\fancyfoot[C]{\thepage} %Seitennummer
+%\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+%_______________________________________________________________________________
+% special words, hyphenation
+%_______________________________________________________________________________
+\hyphenation{Ba-che-lor-ar-beit}
+
+
+%\pagestyle{empty}
+%\pagestyle{headings}
+
+%_______________________________________________________________________________
+% Commands
+%_______________________________________________________________________________
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Zn}{\mathbb{Z}^n_{\geq 0}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\mvar}[2]{#1_1,\ldots , #1_{#2}}
+\newcommand{\kxn}{k[\mvar{x}{n}]}
+\newcommand{\fs}{\mvar{f}{s}}
+%\newcommand{\mc}[1]{\boldsymbol{1}^{(#1)}}
+\newcommand\mc[1]{{\vphantom{\bar{\boldsymbol{1}}}\boldsymbol{1}}^{\mkern-2mu (#1)}}
+\newcommand{\mcb}[1]{\bar{\boldsymbol{1}}^{(#1)}}
+\newcommand{\ya}{\mc{1}\mcb{4}\mc{5}}
+\newcommand{\yb}{\mc{2}\mcb{3}\mc{5}}
+\newcommand{\yc}{\mc{2}\mcb{4}\mc{6}}
+\newcommand{\yd}{\mc{1}\mc{2}\mcb{6}}
+\newcommand{\ye}{\mcb{3}\mc{4}\mc{6}}
+\newcommand{\yf}{\mcb{5}\mc{6}}
+\newcommand{\yfs}{\mcb{5}\mc{6}\mc{6}}
+
+\usepackage{mdframed}
+\definecolor{examplesBackground}{RGB}{220,226.5,237}    %Background color for example environment
+\definecolor{examplesHeaderLine}{RGB}{122,150,191}
+\definecolor{claimsHeaderLine}{gray}{0.97}
+\definecolor{needSl}{gray}{0.92}
+
+\newmdenv[
+	topline=false, bottomline=false, leftline=false, rightline=false,
+	backgroundcolor=examplesBackground,
+	frametitle={\tiny\hspace{2cm}}, frametitlebackgroundcolor=examplesHeaderLine,
+	frametitleaboveskip=-1pt]
+	{abstractSection}
+
+\newmdenv[
+	topline=false, bottomline=false, leftline=true, rightline=false,
+	%leftmargin=10,
+	%backgroundcolor=examplesBackground,
+	frametitlebackgroundcolor=claimsHeaderLine,
+	%frametitleaboveskip=-1pt
+	]
+	{claimbox}
+	
+\newmdenv[
+	topline=false, bottomline=false, leftline=true, rightline=false,
+	%leftmargin=10,
+	backgroundcolor=needSl,
+	%frametitlebackgroundcolor=claimsHeaderLine,
+	%frametitleaboveskip=-1pt
+	]
+	{needSl}
+	
+\newcommand{\mybox}[2]{\begin{mdframed} \textbf{#1} #2 \end{mdframed}}
+\newcommand{\proofbox}[2]{\begin{claimbox}[frametitle={Claim: #1}]  #2 \hfill \# \end{claimbox}}
+%\newcommand{\abstractSection}[1]{\begin{mdframed} \paragraph{Abstract} #1\end{mdframed}}
+
+%\newcommand{\needSlides}[1]{\newpage \Large\textbf{#1 slides allowed} \normalsize}
+\newcommand{\needSlides}[1]{\newpage \begin{needSl}#1 slide(s) allowed\end{needSl}}
+%\newcommand{\needSlides}[1]{#1}
+
+
+
+
+
+%_______________________________________________________________________________
+% START
+%_______________________________________________________________________________
+\author{Philipp Arras}
+\title{Aktueller Stand}
+\begin{document}
+\VerbatimFootnotes
+\tableofcontents
+
+\needSlides{1}
+\section{Physical Context}
+
+\needSlides{2}
+\section{Mathematical Tools}
+\subsection{Basic Definitions: Ideals}
+\begin{defn}
+A subset $I\subset k[\mvar{x}{n}]$ is an \emph{ideal} if:
+\begin{enumerate}
+\item $0 \in I$.
+\item $f,g\in I \;\Rightarrow \; f+g\in I$.
+\item $f\in I$ and $h\in k[\mvar{x}{n}] \;\Rightarrow\; hf\in I$.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}
+If $\mvar{f}{s}\in k[\mvar{x}{n}]$, then 
+\begin{align*}
+\langle \mvar{f}{s} \rangle := \left\lbrace \sum_{i=1}^s h_i f_i \; : \;  \mvar{h}{s} \in \kxn \right\rbrace
+\end{align*}
+ is an ideal of $\kxn$ and is called the \emph{ideal generated by the $f_i$s}.
+\end{lem}
+
+\begin{defn}
+An ideal $I$ is \emph{radical} if the following implication holds:
+\begin{align*}
+f^m \in I \text{ for some integer } m\geq 1 \quad \Rightarrow\quad f\in I.
+\end{align*}
+\end{defn}
+
+Given an arbitrary ideal it is always possible to produce a radical ideal.
+\begin{defn}
+Let $I \subset \kxn$ be an ideal. The \emph{radical} of $I$  is 
+\begin{align*}
+\sqrt{I} := \left\lbrace  f\; :\; f^m \in I \text{ for some integer } m\geq 1  \right\rbrace .
+\end{align*}
+\end{defn} 
+
+\begin{prop}
+Let $f\in \kxn$ and $f = c f_1^{a_1} \cdots f_r^{a_r}$ the factorisation of $f$ into a product of distinct irreducible polynomials. Then \begin{align*}
+\sqrt{\langle f \rangle} = \langle \mvar{f}{r} \rangle .
+\end{align*}
+\end{prop}
+
+\begin{defn}
+Let $I $ and  $ J $ be ideals in $\kxn$. Then the \emph{sum} is defined as
+\begin{align*}
+I+J := \left\lbrace f+g \; :\; f\in I \text{ and } g \in J \right\rbrace .
+\end{align*}
+The \emph{product} $IJ$ is defined to be the ideal generated by all polynomials $f\cdot g$ where $f\in I$ and $g\in J$.\\
+The \emph{intersection} $I\cap J$ of two ideals $I$ and $J$ in $\kxn$ is the set of all polynomials belonging to both $I$ and $J$.
+\end{defn}
+
+\begin{prop}
+\label{propsuminters}
+Let $I = \langle \mvar{f}{r} \rangle$ and  $ J = \langle \mvar{g}{s} \rangle$ be ideals in $\kxn$. Then $I+J$ is the smallest ideal containing both $I$ and $J$ and one has
+\begin{align*}
+I+J =\langle \mvar{f}{r} , \mvar{g}{s} \rangle .
+\end{align*}
+For the product it suffices to take only the product of the generating polynomials:
+\begin{align*}
+IJ =  \langle f_i g_j \; : \;  1\leq i\leq r , 1 \leq j \leq s\rangle . 
+\end{align*}
+\end{prop}
+
+\subsection{Basic Definitions: Varieties}
+\begin{defn} Let $k$ be a field and let $f_1, \ldots, f_s$ be polynomials in $k[x_1,\ldots,x_n]$. Then we set 
+\begin{align*}
+\V (\mvar{f}{s})  = \{ p \in k^n \; :\; f_i(p) = 0 \text{ for all } 1\leq i \leq s \} .
+\end{align*}
+We call $\V(\mvar{f}{s})$ the \emph{affine variety} defined by $\mvar{f}{s}$.
+\end{defn}
+
+\begin{defn} Let $k$ be a field and let $f_1, \ldots, f_s$ be polynomials in $k[x_1,\ldots,x_n]$. Then we set 
+\begin{align*}
+\V (\mvar{f}{s})  = \{ p \in k^n \; :\; f_i(p) = 0 \text{ for all } 1\leq i \leq s \} .
+\end{align*}
+We call $\V(\mvar{f}{s})$ the \emph{affine variety} defined by $\mvar{f}{s}$.
+\end{defn}
+
+
+\begin{lem}
+If $V,W \subset k^n$ are affine varieties, then so are $V\cup W$ and $V\cap W$ and
+\begin{align*}
+V\cap W &= \V (\mvar{f}{s},\mvar{g}{t}),\\
+V\cup W &= \V (f_i g_j \; : \; 1\leq i \leq s, 1\leq j\leq t).
+\end{align*}
+\end{lem}
+
+\begin{defn}
+Let $V\subset k^n$ be a variety. Then we set 
+\begin{align*}
+\I (V) = \left\lbrace f\in \kxn \; :\; f(\mvar{a}{n}) =0 \text{ for all } (\mvar{a}{n}) \in V  \right\rbrace
+\end{align*}
+and  call $\I (V)$ \emph{the ideal of $V$}.
+\end{defn}
+
+\needSlides{1}
+\subsection{Ideal Variety Correspondence}
+\begin{prop}
+If $\langle \mvar{f}{s} \rangle = \langle \mvar{g}{l} \rangle$ then $ \V (\fs  ) = \V (\mvar{g}{l})$.
+\end{prop}
+Other implication is not true.
+\begin{lem}
+\label{varidealssubset}
+If $\mvar{f}{s} \in \kxn$ then $\langle \mvar{f}{s} \rangle \subset \I(\V(\mvar{f}{s}))$.
+\end{lem}
+
+\begin{thm}[The Strong Nullstellensatz]
+Let $k$ be an algebraically closed field and $I \subset \kxn$ an ideal. Then 
+\begin{align*}
+\I(\V(I))=\sqrt{I} .
+\end{align*}
+\end{thm}
+
+\begin{center}
+\begin{tabular}{>{\Centering}p{0.35\textwidth} >{\Centering}p{0.1\textwidth} >{\Centering}p{0.35\textwidth} }
+\toprule
+\textbf{ALGEBRA} & & \textbf{GEOMETRY}\\
+\midrule
+radical ideals & & varieties\\
+$I$ & $\rightarrow$ & $V(I)$\\
+$I(V)$ & $\leftarrow$ & $V$\\
+\midrule
+addition of ideals & &intersection of varieties\\ 
+$I+J$ & $\rightarrow$ & $V(I) \cap V(J)$\\
+$\sqrt{I(V)+I(W)}$ & $\leftarrow$ & $V\cap W$\\
+\midrule
+product / intersection of ideals & & union of varieties\\
+$IJ$ or $I\cap J$ & $\rightarrow$ & $V(I)\cup V(J)$\\
+$\sqrt{I(V)I(W)}$ or $I(V) \cap I(W)$ & $\leftarrow$ & $V\cup W$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\needSlides{1}
+\subsection{Zariski Topology}
+\begin{defn}
+The \emph{Zariski topology} on $k^n$ is the topology where the closed sets are the algebraic sets of $k^n$, i.e. all images of $\V$.
+\end{defn}
+This is in fact a topology.
+
+The Zariski topology is a relatively weak topology and different from $\mathbb{R}^n$ endued with the standard topology.
+
+
+\begin{prop} \label{propZarprops} Three properties of the connection between the Zariski topology on $\C^n $ and the standard topology on $\C^n$ are:
+\begin{enumerate}
+\item A Zariski closed set of $\mathbb{C}^n$ is closed with respect to the standard topology of $\mathbb{C}^n$ as well.
+\item Non-empty Zariski open sets are dense in $\mathbb{C}^n$ with respect to the standard topology.
+\item The Zariski topology is not Hausdorff (as opposed to the standard topology).
+\end{enumerate}
+\end{prop}
+
+\needSlides{1}
+\subsection{Prime Decomposition of a Variety}
+\begin{defn}
+A subset $S\subset \kxn$ is \emph{irreducible} if it cannot be decomposed into two distinct proper closed subsets.
+\end{defn}
+Or equivalently in this case: A variety $V \subset \kxn$ is \emph{irreducible} if whenever $V$ is written in the form $V = V_1 \cup V_2$ ($V_1,V_2$ varieties), then either $V_1 = V$ or $V_2 = V$.\\
+Connection to prime numbers.
+\begin{prop}
+Let $V\subset k^n$ be an variety. Then $V$ is irreducible if and only if $\I (V)$ is a prime ideal. For $k$ algebraically closed this sets up a one-to-one correspondence between irreducible varieties in $k^n$ and prime ideals in $\kxn$.
+\end{prop}
+
+Finite decomposition exists (Noetherian ring) and is unique for minimal decompositions.
+
+\begin{defn}
+Let $V \subset k^n$ be a variety. A decomposition 
+\begin{align*}
+V = V_1 \cup \ldots \cup V_m
+\end{align*}
+where each $V_i$ is an irreducible variety is called a \emph{minimal decomposition} if $V_i\not\subset V_j$ for $i\neq j$.
+\end{defn}
+\begin{thm}
+\label{thmdecvar}
+Let $V\in k^n$ be a variety. Then $V$ has a minimal decomposition
+\begin{align*}
+V = V_1 \cup \ldots \cup V_m.
+\end{align*}
+This minimal decomposition is unique up to the order in which the $V_i$s are written if $k$ is algebraically closed.
+\end{thm}
+
+\begin{center}
+\begin{tabular}{>{\Centering}p{0.35\textwidth} >{\Centering}p{0.1\textwidth} >{\Centering}p{0.35\textwidth} }
+\toprule
+\textbf{ALGEBRA} & & \textbf{GEOMETRY}\\
+\midrule
+prime ideal &$\leftrightarrow$ & irreducible variety\\
+\midrule
+ascending chain condition &$\leftrightarrow$ & descending chain condition\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Primary Decomposition}
+\begin{defn}
+An ideal $I\subset \kxn$ is \emph{primary} if the following implication holds:
+\begin{align*}
+fg \in I \quad \Rightarrow \quad f\in I \text{ or } g^m\in I \text{ for some integer } m \geq 1.
+\end{align*}
+\end{defn}
+
+Prime ideals are primary ideals.
+
+\begin{ex}
+Consider $R = \mathbb{Z}$. Then there exists the prime factorization of an integer $n\in \mathbb{Z}$ into powers of distinct primes: $n= \pm p_1^{d_1} \cdots p_l^{d_l}$. Therefore we may write the ideal $\langle n\rangle$ as 
+\begin{align*}
+\langle n\rangle = \langle p_1^{d_1} \rangle \cap \ldots \cap \langle p_l^{d_l}\rangle .
+\end{align*}
+This is possible.
+The associated primes of this primary decomposition are the $\langle p_i\rangle$.
+\end{ex}
+
+Finite primary decomposition of any ideal (not the whole polynomial ring) exists. But not unique. But associated prime ideals are unique.
+
+\begin{ex}
+This is an example that a primary decomposition does not need to be unique. Consider $I= \langle x^2, xy \rangle$. This ideal can be decomposed into $I = \langle  x  \rangle\cap  \langle x^2, xy, y^2 \rangle$ or into $I = \langle x \rangle \cap \langle x^2, y \rangle$.
+It is striking that the radicals of $\langle x^2, xy, y^2 \rangle$ and of $\langle x^2, y\rangle$ are the same: $\langle x,y \rangle$. Additionally, note that one component of the primary decomposition is embedded in the other: $\V (x^2,y) \subset \V (x)$.
+
+Nonetheless, the above condition for a minimal primary decomposition is satisfied: 
+\begin{align*}
+\langle  x  \rangle & \nsubseteq  \langle x^2, y \rangle\\
+\text{ and }\langle x^2, y \rangle & \nsubseteq \langle  x  \rangle 
+\end{align*}
+since $x \notin \langle x^2, y \rangle$ and $y^2 \notin \langle x \rangle $ and likewise for $\langle x^2,xy, y^2 \rangle$.
+
+Finally, $\sqrt{I} = \langle x \rangle$ so the prime decomposition of the radical of $I$ coincides with the primary components of $I$ (without embedded components).
+
+\end{ex}
+
+\needSlides{1}
+\subsection{Dimension}
+
+\subsubsection{Dimension, topological}
+\begin{defn} Let $X$ be a non-empty topological space. Then we call
+\begin{align*}
+\dim (X) := \sup \{ n\in \mathbb{N} \; : \;   \exists \text{ irreducible subsets } V_i \text{ with } \varnothing \neq V_0 \subsetneq \ldots \subsetneq V_n \subsetneq X  \}
+\end{align*}
+the \emph{(topological) dimension} of $X$.
+\end{defn}
+\begin{prop}
+Let $X$  be a non-empty topological Hausdorff space. Then $\dim X = 0$.
+\end{prop}
+\subsubsection{Dimension, algebraic}
+\begin{defn}
+The \emph{Krull dimension} of a ring $R$ is the maximum of the lengths of chains of prime ideals of $R$. We denote it by $\dim_K R$.\\
+The dimension of an ideal $I \subset R$ is $\dim_K I := \dim_K \nicefrac{R}{I}$.
+\end{defn}
+
+\begin{defn}
+Let $V\subset k^n$ be a variety. Then we call $\nicefrac{\kxn }{\I (V)} \equiv \mathcal{O}(V)$ the \emph{coordinate algebra} of $V$. 
+\end{defn}
+
+\needSlides{1}
+\subsubsection{Dimension, geometric}
+\begin{defn}
+Let $V\subset k^n$ be a variety, $p\in V $ a point and $I=\I (V)$.
+\begin{itemize}
+\item For $f\in I$ define $f_p^{(1)} :=\left. \sum_{i=1}^n \frac{\partial f}{\partial x_i}\right|_p \cdot x_i$.
+\item Let $I_p := \langle \{ f_p^{(1)} \; : \;  f\in I\} \rangle$ be the ideal generated by all $f^{(1)}$.
+\item $T_p V := \V (I_p)$ is called tangent space at $x$. This is a linear subvectorspace of $k^n$.
+\end{itemize}
+The \emph{dimension of $V$ in $p$} is defined to be  $\dim_k (T_p V)$ where $\dim_k$ denotes the $k$-vector space dimension. 
+\end{defn}
+
+\begin{cor}
+\label{cortspaceJac}
+The tangent space $T_p V$ is isomorphic to the kernel of the Jacobian matrix:
+\begin{align*}
+T_p V \cong \ker \left( \frac{\partial F_i}{\partial x_j}\bigg|_p  \right)_{ij}
+\end{align*}
+\end{cor}
+
+\needSlides{1}
+\subsubsection{Abstract}
+\begin{prop}
+Let $V$ be an irreducible variety and let be $\mathcal{O} (V)$ be the coordinate algebra of $V$. Then $\dim V = \dim_k \mathcal{O} (V)$.
+\end{prop}
+
+\begin{prop}
+\label{propZarTSpace}
+Let $V$ be a variety, $x\in V$ and $\mathfrak{m}_x$ be the maximal ideal of $\mathcal{O} (V)$ corresponding to $x$. Then there exists a natural isomorphism of vector spaces between $T_p V$ and the dual space $(\nicefrac{\mathfrak{m}_x}{\mathfrak{m}_x^2})^*$ to $\nicefrac{\mathfrak{m}_x}{\mathfrak{m}_x^2}$. The $k$-vector space $(\nicefrac{\mathfrak{m}_x}{\mathfrak{m}_x^2})^*$ is called \emph{Zariski tangent space}.
+\end{prop}
+
+\begin{itemize}
+\item Global concepts
+	\begin{itemize}
+	\item Topological dimension
+	\item Krull dimension
+	\end{itemize}
+	For irreducible varieties: Topological dimension = Krull dimension of coordinate algebra 
+\item Local concepts
+	\begin{itemize}
+	\item Geometric tangent space
+	\item Zariski tangent space
+	\end{itemize}
+	Generally: $(T_p V)^* \cong \nicefrac{\mathfrak{m}_x}{\mathfrak{m}_x^2}$.
+\end{itemize}
+
+\needSlides{1}
+\begin{defn}
+If local dimension in x = global dimension, then regular point.\\
+If local dimension in x $\neq$ global dimension, then singular point.
+\end{defn}
+
+\begin{prop}
+Let $V$ be a variety and $x\in V$. If there exist irreducible components $V_1 \neq V_2$ of $V$ with $x\in V_1 \cap V_2$, then $x$ is a singular point of $V$.
+\end{prop}
+Therefore selfintersections of varieties are singular points.	
+
+\needSlides{1}
+\subsection{Gröbner Bases}
+\begin{defn}
+Let $I \subset \kxn  $ be an non-zero ideal. 
+\begin{itemize}
+\item $LT(I)$ is the set of leading terms of $I$, thus
+\begin{align*}
+LT(I) = \{ cx^\alpha \; : \;  \text{there exists } f \in I \text{ with } LT(f) = cx^\alpha \}.
+\end{align*}
+
+\item $\langle LT(I) \rangle$ is the ideal generated by all leading terms of $I$.
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+Fix a monomial order. A finite subset $G = \{ \mvar{g}{t} \}$ of an ideal $I$ is said to be a \emph{Gröbner basis} if 
+\begin{align*}
+\langle LT(g_1), \ldots, LT(g_t) \rangle = \langle LT(I) \rangle .
+\end{align*}
+\end{defn}
+
+\begin{ex}
+\label{exGrbase}
+Monomial order needs to be specified, e.g. grlex order.
+Consider $I=\langle f_1,f_2 \rangle$ where $f_1=x^3 - 2xy$ and $f_2 = x^2 y -2y^2+x$ and use the grlex ordering on monomials in $k[x,y]$. Then $x\cdot f_2 - y \cdot f_1 = x^2$, i.e. $x^2 \in I$ and thus $x^2 \in \langle LT(I) \rangle$. However, $x^2$ is not divisible by $LT(f_1) = x^3$ or $LT(f_2) = x^2y$ so that $x^2 \notin \langle LT(f_1), LT(f_2) \rangle$. This shows that $\{ f_1,f_2 \}$ is not a Gröbner basis of $I$ with respect to grlex ordering. A Gröbner basis would be $\langle 2 y^2 -x, xy, x^2 \rangle$. 
+\end{ex}
+
+\begin{ex}
+Consider $I = \langle f_1,f_2 \rangle \subset k[x,y]$ with $f_1 = xy+1$ and $f_2 = y^2 -1$. Divide $f = xy^2-y$ by $\langle f_1, f_2 \rangle$:
+\begin{align*}
+xy^2-x = y \cdot (xy+1) + 0 \cdot (y^2-1) + (-x-y).
+\end{align*}
+However, dividing $f$ by $\langle f_2 , f_1 \rangle$ yields
+\begin{align*}
+xy^2-y = x \cdot (y^2-1) + 0\cdot (xy+1) +0.
+\end{align*}
+This shows that $f \in I$ but the result of the division has depended on the ordering of the polynomials. Therefore $\{f_1,f_2\}$ cannot be a Gröbner basis because the rest term is not unique.
+\end{ex}
+
+For Gröbner Bases the result of the division, i.e. the rest term, does not depend on the ordering of the division polynomials. This is good for computations because a polynomial is in an ideal iff the rest term is zero. If the ideal is not given in Gröbner basis form the polynomial could be in the ideal but the rest can be non-zero.
+
+
+
+
+\needSlides{1}
+\section{Application}
+\subsection{Software Set-up}
+\verb|Singular| can be used stand-alone or as a package in various computer algebra systems like \verb|Maple|, \verb|Mathematica|, \verb|MATLAB| or \verb|SAGE|. The last one is  free software and distributed under the terms of GNU GPL. Additionally, I would like to recommend the \verb|sagetex| package for \LaTeX. It executes on the fly \verb|SAGE| code written in the \verb|.tex| file and typesets directly the output including plots.
+\needSlides{2}
+\subsection{Computations}
+\begin{align}
+0&=d_0 c_2^2 + b_0^2 c_1 - b_0 b_1 c_2,\\
+0&=d_1 b_0 c_2 - b_0^2 b_2-c_2^2 d_2,
+\end{align}
+\begin{align}
+0&=d_0 b_2 c_1 - b_0 b_2^2 - c_1^2 d_2,\\
+0&=d_1 c_1^2 - b_1 b_2 c_1 + b_2^2 c_2,
+\end{align}
+\begin{align}
+0&=d_0 c_1^3 c_2^2 + b_0^2 c_1^4-b_0 b_1 c_1^3 c_2 + c_2^3 (b_1 b_2 c_1 - b_2^2 c_2 - c_1^2 d_1),\\
+0&=d_2 c_1^4 c_2^2+(b_0 c_1^2+c_2 (-b_1 c_1+b_2 c_2)) (b_0 b_2 c_1^2+c_2 (-b_1 b_2 c_1+b_2^2 c_2+c_1^2 d_1)).
+\end{align}
+
+\begin{lstlisting}
+singular.lib('primdec.lib');
+singular.lib('sing.lib');
+R = singular.ring(0, '(b0,b1,b2,c1,c2,d0,d1,d2)', 'dp');
+I1 = singular.ideal('d0*c2^2+b0^2*c1-b0*b1*c2','d1*b0*c2-b0^2*b2-c2^2*d2').std();
+I2 = singular.ideal('d0*b2*c1-b0*b2^2-c1^2*d2','d1*c1^2-b1*b2*c1+b2^2*c2').std();
+I3 = singular.ideal('d0*c1^3*c2^2-(-b0^2*c1^4+b0*b1*c1^3*c2+c2^3*(-b1*b2*c1+b2^2*c2+c1^2*d1))','d2*c1^4*c2^2+(b0*c1^2+c2*(-b1*c1+b2*c2))*(b0*b2*c1^2+c2*(-b1*b2*c1+b2^2*c2+c1^2*d1))').std();
+
+# Extract the matter curves
+I1pr = I1.minAssGTZ();
+I2pr = I2.minAssGTZ();
+I3pr = I3.minAssGTZ();
+\end{lstlisting}
+The output of \verb|I1pr| is:
+\begin{spverbatim}
+[1]:
+   _[1]=b2^2*d0^2 - b1*b2*d0*d1 + c1*d0*d1^2 + b1^2*b2*d2 - 2*b2*c1*d0*d2 
+- b1*c1*d1*d2 + c1^2*d2^2
+   _[2]=b0*b2*d0 - c2*d0*d1 - b0*c1*d2 + b1*c2*d2
+   _[3]=-b2*c2*d0^2 - b0*c1*d0*d1 + b1*c2*d0*d1 + b0*b1*c1*d2 - b1^2*c2*d2
++ c1*c2*d0*d2
+   _[4]=b0*b1*b2 - b2*c2*d0 - b0*c1*d1 + c1*c2*d2
+   _[5]=b0^2*c1 - b0*b1*c2 + c2^2*d0
+   _[6]=b0^2*b2 - b0*c2*d1 + c2^2*d2
+[2]:
+   _[1]=c2
+   _[2]=b0
+\end{spverbatim}
+
+Every pair of the above equations define two matter curves.
+\begin{lstlisting}
+#Save matter curves in variables
+
+# I1
+CI1 = I1pr[2].std(); # c2 = 0 = b0
+CI2 = I1pr[1].std(); # complicated
+
+#I2
+CI3 = I2pr[2].std(); # b2 = 0 = c1
+CI4 = I2pr[1].std(); # complicated
+
+#3
+CI5 = I3pr[2].std(); # c2 = 0 = c1
+CI6 = I3pr[1].std(); # complicated
+\end{lstlisting}
+
+
+
+Charge conservation leads to selection rules how the matter is allowed to interact. All possible combinations are:
+\begin{itemize}
+\item $\ya$
+\item $\yb$
+\item  $\yc$
+\item $\yd$
+\item $\ye$
+\item $\yfs$.
+\end{itemize}
+
+\begin{lstlisting}
+inters1 = (CI1+CI4+CI5).std();
+inters2 = (CI2+CI3+CI5).std();
+inters3 = (CI2+CI4+CI6).std();
+inters4 = (CI1+CI2+CI6).std();
+inters5 = (CI3+CI4+CI6).std();
+singCI6 = singular.slocus(CI6).std();
+inters6 = (CI5+singCI6).std();
+inters61 = (CI5+CI6).std();
+\end{lstlisting}
+
+Consider generic case. In a polynomial ring of eight complex variables: 8 compl dof. -5 dof due to scaling relations amongst the variables. -1 dof for each equation.
+
+Best: count codimensions. We are looking for points on $B_6$ (codimension 3). This corresponds to a five-dimensional locus in $\C^8$ (again codimension $8-5=3$).
+\begin{lstlisting}
+inters1pr = inters1.minAssGTZ();
+inters2pr = inters2.minAssGTZ();
+inters3pr = inters3.minAssGTZ();
+inters4pr = inters4.minAssGTZ();
+inters5pr = inters5.minAssGTZ();
+inters6pr = inters6.minAssGTZ();
+inters61pr = inters61.minAssGTZ();
+
+inters1pr[1].std().dim()  # -> codim 3
+inters2pr[1].std().dim()  # -> codim 3
+inters3pr[1].std().dim()  # -> codim 3 # here .std() important
+inters3pr[2].std().dim()  # -> codim 4 # wrong codimension
+inters4pr[1].std().dim()  # -> codim 3
+inters5pr[1].std().dim()  # -> codim 3
+inters6pr[1].std().dim()  # -> codim 3
+inters61pr[1].std().dim() # -> codim 3
+inters61pr[2].std().dim() # -> codim 4 # wrong codimension
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{l|p{10cm}}
+\toprule
+$\ya$ & $\langle c_2,c_1,b_0 \rangle$\\
+\midrule
+$\yb$ & $\langle c_2,c_1,b_2 \rangle$\\
+\midrule
+$\yc$ & too long to be displayed\\
+\midrule
+$\yd$ & $\langle b_2^2 d_0^2-b_1 b_2 d_0 d_1+c_1 d_0 d_1^2+b_1^2 b_2 d_2-2 b_2 c_1 d_0 d_2-b_1 c_1 d_1 d_2+c_1^2 d_2^2,c_2,b_0\rangle$\\
+\midrule
+$\ye$ & $\langle-b_0 b_1 d_0 d_1+c_2 d_0^2 d_1+b0^2 d_1^2+b_0 b_1^2 d_2-b_1 c_2 d_0 d_2-2 b_0 c_2 d_1 d_2+c_2^2 d_2^2,c_1,b_2\rangle$\\
+\midrule
+$\yfs$ & $\langle -b_2 d_0^2+b_1 d_0 d_1-b_0 d_1^2-b_1^2 d_2+4 b_0 b_2 d_2,c_2,c_1\rangle$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\needSlides{1}
+\subsection{Observe Threefold Enhancement of Fibre}
+Can be read off the hypersurface equation:
+\begin{gather*}
+P_{T^2} = vw(c_1ws_1+c_2vs_0)+u(b_0v_2s^2_0+b_1vws_0s_1+b_2w_2s^2_1 )\: +  \\
+ + \: u_2(d_0vs^2_0s_1 +d_1ws_0s^2_1 +d_2us^2_0s^2_1)=0.
+\end{gather*}
+
+
+\subsubsection{At matter curves}
+Plug in a matter curve: E.g.  $C_1$
+\begin{align*}
+\label{eqmattercurve}
+\left. P_{T^2} \right|_{\mc{1}} &\equiv \left. P_{T^2} \right|_{b_0 =0, c_2=0}  \\
+&=  s_1 (d_2 s_0^2 s_1 u^3 + d_0 s_0^2 u^2 v +  d_1 s_0 s_1 u^2 w + b_1 s_0 u v w + b_2 s_1 u w^2 + c_1 v w^2).
+\end{align*}
+
+\subsubsection{At intersection loci}
+Plug in the equations for intersect.
+\begin{itemize}
+	\item For $\yd$:
+	\begin{itemize}
+		\item Solve the last equation for $d_1$: $d_1= \frac{ b_1 b_2 d_0 + b_1 c_1 d_2 \pm \sqrt{b_1^2 - 4 c_1 d_0} (b_2 d_0 - c_1 d_2)}{2 c_1 d_0}$.
+		\item Plugging this and $b_0=0$ and $c_2=0$ in the hypersurface equation it gives:
+		\begin{align*}
+		\left. P_{T^2} \right|_{\yd} = & \frac{1}{4 c_1 d_0} s_1 \left[ \left( b_1 \pm \sqrt{b_1^2 - 4 c_1 d_0} \right) s_0 u + 2 c_1 w \right]\\
+		& \times \left[ \left(b_1 \mp \sqrt{b_1^2 - 4 c_1 d_0} \right) d_2 s_0 s_1 u^2+ 2 b_2 d_0 s_1 u w + \ldots \right. \\
+		& \quad \left.  \ldots+ \left( b_1 d_0 \mp d_0 \sqrt{b_1^2 - 4 c_1 d_0}\right) s_0 u v + 2 c_1 d_0 v w \right]
+		\end{align*}
+	\end{itemize}
+	
+	\item For $\ye$:
+	\begin{itemize}
+		\item Solve the last equation for $d_2$: $d_2 = \frac{-b_0 b_1^2 + b_1 c_2 d_0 +  2 b_0 c_2 d_1 \pm (b_0 b_1 - c_2 d_0) \sqrt{b_1^2 - 4 c_2 d_1}}{2 c_2^2}$.
+		\item Plugging this and $b_2=0$ and $c_1=0$ in the hypersurface equation it gives:
+		\begin{align*}
+		\left. P_{T^2} \right|_{\ye} = &\frac{1}{4 c_2^2} s_0 \left[ \left( b_1 + \sqrt{b_1^2 - 4 c_2 d_1}\right) s_1 u + 2 c_2 v \right]\\
+		  &\times \left[ \left( -b_0 b_1 + 2 c_2 d_0 \pm b_0 \sqrt{b_1^2 - 4 c_2 d_1} \right) s_0 s_1 u^2 + \ldots  \right.\\
+		  &  \quad \left.  \ldots + 2 b_0 c_2 s_0 u v + \left( b_1 c_2 \pm c_2 \sqrt{b_1^2 - 4 c_2 d_1} \right) s_1 u w + 2 c_2^2 v w \right]
+		\end{align*}
+		
+	\end{itemize}
+	
+	\item For $\yfs$:
+	\begin{itemize}
+		\item Solve the last equation for $b_1$: $b_1 = \frac{d_0 d_1 \pm \sqrt{d_0^2-4b_0d_2}\sqrt{d_1^2-4b_2d_2}}{2d_2}$
+		\item Plugging this and $c_1=0$ and $c_2=0$ in the hypersurface equation it gives:
+			\begin{align*}
+			&\left. P_{T^2} \right|_{\yfs} = \frac{1}{4d_2} u   \\
+			 &\times \left[2d_2 s_0s_1u + \left(d_0 - \sqrt{d_0^2-4b_0d_2}\right) s_0 v+ \left( d_1 \pm \sqrt{d_1^2-4b_2d_2} \right) s_1 w \right] \\
+			  &\times \left[2d_2 s_0s_1u + \left( d_0 + \sqrt{d_0^2-4b_0d_2}\right) s_0 v+\left( d_1 \mp \sqrt{d^2_1-4b_2d_2} \right) s_1 w \right]
+			\end{align*}
+	\end{itemize}
+\end{itemize}
+
+This was the generic case!
+
+\needSlides{1}
+\section{What have we seen}
+
+\end{document}

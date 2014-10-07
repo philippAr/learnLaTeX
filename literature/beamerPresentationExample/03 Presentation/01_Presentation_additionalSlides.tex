@@ -1,0 +1,233 @@
+%\documentclass[11pt]{article}
+%\usepackage{beamerarticle}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+%\documentclass[11pt]{beamer}
+\documentclass[notes=hide]{beamer}
+\usefonttheme[onlymath]{serif}
+\usetheme{Berkeley}
+%\usetheme{Ilmenau}
+
+
+
+%_______________________________________________________________________________
+% packages
+%_______________________________________________________________________________
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage{amsmath,amsfonts,amssymb, nicefrac}
+\usepackage[makeroom]{cancel}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{booktabs,array,ragged2e}
+\usepackage{graphicx,subfigure,pifont}
+\usepackage{fancyvrb}
+
+\graphicspath{{./pics/}}
+
+\usepackage{tikz}
+\usetikzlibrary[decorations.pathmorphing]
+
+\usepackage{spverbatim}
+
+%_______________________________________________________________________________
+% Listings
+%_______________________________________________________________________________
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+%  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize,        % the size of the fonts that are used for the codew
+breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+%  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+%  deletekeywords={...},            % if you want to delete keywords from the given language
+%  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+%  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+%  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+%  language=Octave,                 % the language of the code
+%  morekeywords={*,...},            % if you want to add more keywords to the set
+%  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+%  numbersep=5pt,                   % how far the line-numbers are from the code
+%  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+%  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+%  showstringspaces=false,          % underline spaces within strings only
+%  showtabs=false,                  % show tabs within strings adding particular underscores
+%  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+%  tabsize=2,                       % sets default tabsize to 2 spaces
+%  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%_______________________________________________________________________________
+% amsthm
+%_______________________________________________________________________________
+\usepackage{amsthm}
+%\newtheorem{defn}{Definition}[section]
+\newtheorem{defn}{Definition}
+\newtheorem{thm}[defn]{Theorem}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{ex}[defn]{Example}
+
+%_______________________________________________________________________________
+% Commands
+%_______________________________________________________________________________
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Zn}{\mathbb{Z}^n_{\geq 0}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\mvar}[2]{#1_1,\ldots , #1_{#2}}
+\newcommand{\kxn}{k[\mvar{x}{n}]}
+\newcommand{\fs}{\mvar{f}{s}}
+%\newcommand{\mc}[1]{\boldsymbol{1}^{(#1)}}
+\newcommand\mc[1]{{\vphantom{\bar{\boldsymbol{1}}}\boldsymbol{1}}^{\mkern-2mu (#1)}}
+\newcommand{\mcb}[1]{\bar{\boldsymbol{1}}^{(#1)}}
+\newcommand{\ya}{\mc{1}\mcb{4}\mc{5}}
+\newcommand{\yb}{\mc{2}\mcb{3}\mc{5}}
+\newcommand{\yc}{\mc{2}\mcb{4}\mc{6}}
+\newcommand{\yd}{\mc{1}\mc{2}\mcb{6}}
+\newcommand{\ye}{\mcb{3}\mc{4}\mc{6}}
+\newcommand{\yf}{\mcb{5}\mc{6}}
+\newcommand{\yfs}{\mcb{5}\mc{6}\mc{6}}
+
+\author{Philipp Arras}
+\title{Additional Slides}
+\setbeamercovered{transparent} 
+\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{Institute for Theoretical Physics Heidelberg} 
+%\date{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Ideals}
+
+\begin{frame}{Ideals} \small
+\begin{defn}
+A subset $I\subset k[\mvar{x}{n}]$ is an \emph{ideal} if:
+\begin{enumerate}
+\item $0 \in I$.
+\item $f,g\in I \;\Rightarrow \; f+g\in I$.
+\item $f\in I$ and $h\in k[\mvar{x}{n}] \;\Rightarrow\; hf\in I$.
+\end{enumerate}
+\end{defn}
+\pause
+\begin{itemize}[<+->]
+\item Example: \begin{align*}
+	I &:= \langle \textcolor{orange}{x},\textcolor{orange}{y+1} \rangle \equiv \{ h_1 \cdot x + h_2 \cdot (y+1) \; : \; h_1,h_2 \in \C [x,y] \}\\
+	J &:= \langle \textcolor{blue}{x^2} \rangle
+	\end{align*}
+\item Combine ideals: \begin{align*}
+I+J &= \langle \textcolor{orange}{x},\textcolor{orange}{y+1},\textcolor{blue}{x^2} \rangle = \langle x,y+1 \rangle\\
+IJ &= \langle \textcolor{orange}{x}\textcolor{blue}{x^2} , \textcolor{orange}{(y+1)}\textcolor{blue}{x^2}  \rangle\\
+I\cap J &= \langle GCD (\textcolor{blue}{x^2},\textcolor{orange}{(y+1)}), GCD(\textcolor{blue}{x^2},\textcolor{orange}{x}) \rangle = \langle x^2(y+1),x \rangle
+\end{align*}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Maximal ideals of $\mathcal{O}(V)$}
+\begin{prop}
+The $\{ \mathfrak{m}_x \; : \;  x \in V \}$ are the only maximal ideals of $\mathcal{O}(V)$ for $k$ algebraically closed.
+\end{prop}
+
+\end{frame}
+\begin{frame}{Maximal ideals of $\mathcal{O}(V)$: Proof}
+
+Let $\mathfrak{m} \subset \mathcal{O}(V)$ be a maximal ideal and let $\phi : \kxn \rightarrow \mathcal{O}(V)$ be the quotient map. Then $\phi^{-1} (\mathfrak{m})$ is maximal. \pause An immediate consequence of the Weak Nullstellensatz is that the only maximal ideals of $\kxn$ are of the form $\mathfrak{m}_a := \langle x_1-a_1 ,\ldots , x_n-a_n \rangle$ for some $(\mvar{a}{n}) \in k^n$. \pause So $\phi^{-1}(\mathfrak{m})$ must equal $\mathfrak{m}_a$ for some $a\in k^n$. \pause
+But that means that the inverse images of elements of $\mathfrak{m}$ vanish at $a$, i.e. the following implication is true:
+\begin{align*}
+ \bar{f} \equiv \phi (f) \in \mathfrak{m} \subset \mathcal{O}(V) \quad \Rightarrow \quad f(a) =0  .
+\end{align*} \pause
+So far we showed $\mathfrak{m} \supset \phi (\mathfrak{m}_a)$.  \pause But by definition $\mathfrak{m}_a \supset \I (V)$ so $a \in V$ and $\mathfrak{m} = \phi (\mathfrak{m}_a)$.
+
+\end{frame}
+
+
+\section{Zariski Topology}
+
+\begin{frame}{Zariski Topology}
+\begin{defn}
+The \emph{Zariski topology} on $k^n$ is the topology where the closed sets are the algebraic sets of $k^n$, i.e. all images of $\V$.
+\end{defn} \pause
+\begin{itemize}[<+->]
+\item Weak topology: Zariski-closed $\Rightarrow$ Standard-closed
+\item Not Hausdorff
+\item Non-empty Zariski-closed $\Rightarrow$ dense in standard-$\C^n$
+\end{itemize}
+\end{frame}
+
+\section{Primary Decomposition}
+
+\begin{frame}{Primary Decomposition}
+\begin{itemize}[<+->]
+\item Prime Decomposition only for radical ideals
+\item Primary Decomposition:
+%\begin{align*}
+%\langle 1400 \rangle = \langle 2^3 \cdot 5^2 \cdot 7 \rangle = \langle 2^3 \rangle \cap \langle 5^2 \rangle \cap \langle 7 \rangle
+%\end{align*}
+\begin{align*}
+\langle x^2 , xy \rangle &= \langle x \rangle \cap \langle x^2, y\rangle\\
+\langle x, xy \rangle =  \sqrt{\langle x^2 , xy \rangle} &= \sqrt{\langle x \rangle} \cap\sqrt{ \langle x^2, y\rangle} = \langle x \rangle \cap \langle  x,y \rangle
+\end{align*}
+$\rightarrow$ embedded components: $\V (x^2,y) \subset \V (x)$\\
+$\rightarrow$ associated primes unique
+\end{itemize}
+
+\end{frame}
+
+\section{Gröbner Basis}
+
+\begin{frame}{Gröbner Basis}
+\begin{itemize}[<+->]
+\item Consider: $I = \langle f_1,f_2 \rangle \subset \C [x,y]$ with $f_1 = xy+1$ and $f_2 = y^2 -1$.
+\item Divide $f = xy^2-y$ by $\langle f_1, f_2 \rangle$.
+\begin{align*}
+xy^2-x = y \cdot (xy+1) + 0 \cdot (y^2-1) + (-x-y).
+\end{align*}
+\item  Divide $f = xy^2-y$ by $\langle f_2, f_1 \rangle$.
+\begin{align*}
+xy^2-y = x \cdot (y^2-1) + 0\cdot (xy+1) +0.
+\end{align*}
+\item Note: Monomial order is important!
+\item[$\Rightarrow$] Division depends on ordering of polynomials.
+\item Gröbner Bases are generating sets where the rest term is unique.
+\item In this case: $I= \langle x+y, y^2-1\rangle$
+\end{itemize}
+\end{frame}
+
+
+\section{Software Set-up}
+
+
+\begin{frame}[fragile]
+\frametitle{Software Set-up}
+\begin{itemize}
+\item \verb|Singular| inside \verb|SAGE|
+\item Recommendation: \verb|sagetex|
+\end{itemize}
+\end{frame}
+
+
+
+
+\end{document}
