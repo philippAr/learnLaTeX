@@ -4,7 +4,7 @@
 --------------------------------------------------------------------
 --------------------------------------------------------------------
 
-01 Begrüßung                    P   fertig
+01 Begrüßung                    P   fertig, Tabelle ist noch nicht richtig formatiert
 02 Einleitung und Konzept       F   
 03 Einführung                   P   
 04 Umgebungen
