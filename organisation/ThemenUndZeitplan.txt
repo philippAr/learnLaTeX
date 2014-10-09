@@ -12,7 +12,7 @@
     Tabellen/Fußnoten/Figuren   F
 05 Workflow                     F
 06 Bibliographie                F
-07 Nützliche Pakete             P
+07 Nützliche Pakete             P   fertig
 08 Weitere Pakete               P
 
 

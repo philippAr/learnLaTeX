@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{graphicx}
+\usepackage{graphicx, cases}
 \usepackage{blindtext,hyperref}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Philipp Arras}
@@ -81,7 +81,16 @@ Die Lösung ist \verb|\LaTeX\ hilft|. Dies gibt \LaTeX\ hilft.
 \end{enumerate}
 
 \section{Aufzählungen}
-Hier einfach nur kurz itemize und enumerate erklären
+Hier einfach nur kurz itemize und enumerate erklären. Und description:
+\begin{description}
+  \item[First] \hfill \\
+  The first item
+  \item[Second] \hfill \\
+  The second item
+  \item[Third] \hfill \\
+  The third etc \ldots
+\end{description}
+\end{enumerate}
 
 \section{Mathe-Umgebungen}
 \begin{itemize}
@@ -107,11 +116,31 @@ Hier einfach nur kurz itemize und enumerate erklären
   \item mathbb
   \item mathscr (braucht mathrsfs-Package)
   \end{itemize}
+\item Mehrere Fälle (benötigt das Paket cases):
+\begin{verbatim}
+\begin{numcases}{E = mc^2}
+m \neq 0 & Masselose Teilchen\\
+m < 0 & Antiteilchen (?)\\
+m > 0 & normale Teilchen
+\end{numcases}
+\end{verbatim}
+\begin{numcases}{E = mc^2}
+m \neq 0 & Masselose Teilchen\\
+m < 0 & Antiteilchen (?)\\
+m > 0 & normale Teilchen
+\end{numcases}
 \item Text in Matheumgebung mit \verb|\text{ ... }|.
-
-Alles Wichtige steht hier: \url{http://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text}.
+\item Abstände mit Komma, Semikolon, quad, qquad oder hspace
+\item Operatorennamen: $\arccos \arcsin \arg \cos \cot \coth \deg \det \exp \gcd \inf \injlim \lg \lim \limsup \ln \max$ \\ $\min \projlim \sec \sinh \sup \tanh$ mit Backslash
+\item Große Klammern:
+\[(\frac{\int^a x dx}{\sum_{n=1} x})\]
+Vs. 
+\[ \left( \frac{\int^a x dx}{\sum_{n =1} x} \right) \]
 
 \end{itemize} 
+
+Alles Wichtige steht hier: \url{http://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text} und im Repository: 05-Mathesatz I.pdf
+
 
 Aufgabe: Suche dir einen Abschnitt aus dem Seminarvortrag von Philipp und texe es nach. Alternativ natürlich auch gerne eine eigene Rechnung etc.
 

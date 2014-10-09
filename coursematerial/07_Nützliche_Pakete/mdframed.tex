@@ -1,0 +1,23 @@
+\documentclass[11pt,a4paper]{scrreprt}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mdframed}
+\definecolor{examplesBackground}{RGB}{220,226.5,237}
+\definecolor{examplesHeaderLine}{RGB}{122,150,191}
+\definecolor{claimsHeaderLine}{gray}{0.97}
+
+\newmdenv[
+	topline=false, bottomline=false, leftline=false, rightline=false,
+	backgroundcolor=examplesBackground,
+	frametitle={\tiny\hspace{2cm}}, frametitlebackgroundcolor=examplesHeaderLine,
+	frametitleaboveskip=-1pt]
+	{abstractSection}
+
+\begin{document}
+\begin{abstractSection}
+Algebraic geometry heavily relies on the fact that there is a strong connection between ideals being algebraic objects and varieties being geometric ones. We will start with the basic definitions and arrive via \emph{Hilbert's Nullstellensatz} at the Algebra-Geometry dictionary. Already at this point, I would like to stress that it holds only for ideals in polynomial rings over algebraically closed fields. Without this assumption algebraic geometry is far from being intuitive and descriptive.
+
+After defining an adequate topology we decompose varieties uniquely into irreducible ones. Unfortunately, this does not translate into the language of ideals in full generality: Only radical ideals can be decomposed into prime ideals uniquely. For non-radical ideals we need a more sophisticated concept: the primary decomposition.
+\end{abstractSection}
+
+\end{document}

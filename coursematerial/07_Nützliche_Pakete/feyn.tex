@@ -1,0 +1,20 @@
+\documentclass[11pt,a4paper]{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Load before feyn!!
+\usepackage{feyn,hyperref}
+
+\begin{document}
+\begin{align*}
+\feyn{\vertexlabel^a !{fA}p \vertexlabel^b}
+\end{align*}
+\begin{align*}
+\feyn{fs f gl f glu f fs}
+\end{align*}
+
+\def\bracket#1{\langle #1 \rangle}
+ \begin{eqnarray*}
+ -i\Sigma_{\rm ope} &=&
+     \left[ \feyn{faf + fsfglffs + \cdots} \right] %fs: short fermion, f: fermion, gl: gluon loop
+ \end{eqnarray*}
+More information here: \url{http://texdoc.net/texmf-dist/doc/fonts/feyn/feyn.pdf}
+\end{document}
