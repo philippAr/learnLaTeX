@@ -1,12 +1,19 @@
-\documentclass[11pt,a4paper,ngerman]{scrartcl}
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
-\usepackage{amsmath,amsfonts, amssymb,amsthm}
-\usepackage{blindtext}
-\usepackage{graphicx}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Author}
+\documentclass[a4paper,ngerman]{scrartcl} % 11pt voreingestellt bei scrbook, scrreprt sowie scrartcl; a4paper evtl. überflüssig: jenachdem, was bei der TeX Live Installation als Standard gesetzt wurde
+\author{Vor- und Nachname}
 \title{Titel}
+\date{Datum}
+
+\usepackage[utf8]{inputenc}
+\usepackage{babel} % ngerman bereits oben gewählt
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Ginge auch mit margin=2cm
+
+\usepackage{blindtext}
+
 \begin{document}
-•
+\maketitle
+
+Hallo! Dies ist eine kleine {\LaTeX}-Vorlage!
+
 \end{document}
