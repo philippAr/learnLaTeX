@@ -7,8 +7,8 @@
 01 Begrüßung                    P   fertig, Tabelle ist noch nicht richtig formatiert
 02 Einleitung und Konzept       F   
 03 Einführung                   P   fertig
-04 Umgebungen
-    Mathe/Aufzählungen          P
+04 Umgebungen 
+    Mathe/Aufzählungen          P   fertig
     Tabellen/Fußnoten/Figuren   F
 05 Workflow                     F
 06 Bibliographie                F
