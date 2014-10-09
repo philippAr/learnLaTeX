@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{blindtext,hyperref}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Philipp Arras}
 
@@ -53,14 +54,39 @@ breaklines=true,                 % sets automatic line breaking
 \begin{document}
 \maketitle
 
+\section{Allgemein}
 \begin{enumerate}
-\item Umegbungen sind Makros, die auf einen begrenzten Textbereich wirken.
-\item Beginn und Ende
+\item Umgebungen sind Makros, die auf einen begrenzten Textbereich wirken.
+\item Grundsätzlich gilt: \LaTeX -Befehle beginnen mit einem $\backslash$ und enden mit einem Leerzeichen. Das kann manchmal Probleme machen: \verb|\LaTeX hilft| gibt \LaTeX hilft.\\
+Die Lösung ist \verb|\LaTeX\ hilft|. Dies gibt \LaTeX\ hilft.
+\item Jetzt aber zu Umgebungen: Sie haben einen Anfang und ein Ende:
 	\begin{enumerate}
 	\item \verb|\begin{...}| und \verb|\end{...}|: Definiert Anfang und Ende
-	\item Manche Befehle gelten bis zum nächsten Befehl, wie z.B. $\backslash$ Huge 
+	\item Manche Umgebungen gelten bis zum nächsten ähnlichen Befehl, wie z.B. $\backslash$ Huge 
+    \lstinputlisting{Bsp1_Allgemein.tex}
 	\end{enumerate} 
-\item 
+\item Die wichtigsten Umgebungen:
+  \begin{enumerate}
+  \item Wir kennen schon \emph{document}.
+  \item Textformatierungen (\emph{center}, \emph{flushleft} und \emph{flushright} )
+  \item Zitate (\emph{quote} und \emph{quoatation})
+  \item Listen (\emph{itemize} und \emph{enumerate})
+  \item Direkte Ausgabe (\emph{verbatim} und \emph{verb})
+  \item Abbildungen (\emph{figure})
+  \item Sehr nützlich: \emph{minipage} (selber nachgucken)
+  \item Für Tabellen: \emph{tabular} 
+  \item Für Formeln: \emph{align} 
+  \end{enumerate}
+\item Wir konzentrieren uns auf Mathe-Umgebungen und Aufzählungen
 \end{enumerate}
+
+\section{Mathe-Umgebungen}
+\begin{itemize}
+\item Formeln stehen im Fließtext und abgesetzt. Abgesetzte Formeln haben eine Nummerierung oder auch nicht.
+\item Formeln im Fließtext mit \verb|$ ... $|.
+\item abgesetzte Formeln mit \verb|\begin{ailgn} ... \end{align}| und \verb|\begin{ailgn*} ... \end{align*}|. Mit \verb|\\| macht man eine neue Zeile und mit \verb|\nonumber| bekommt die aktuelle Formel keine Nummer.
+\item Verwende die Pakete amsmath (bessere Umgebungen, Dokumentation: \url{ftp://ftp.ams.org/ams/doc/amsmath/amsldoc.pdf}), amsfonts (fraktur, mehr Zeichen, ...) und amssymb (mehr Zeichen \url{http://de.wikibooks.org/wiki/LaTeX-Kompendium:_amssymb})
+\item Verwende nicht \emph{equarray}! 
+\end{itemize} 
 
 \end{document}
