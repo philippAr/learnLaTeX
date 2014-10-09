@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx, blindtext}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Author}
+\title{Titel}
+\begin{document}
+
+\section{Alignment}
+
+\begin{align}
+x&=y       & X&=Y  & a&=b+c\\
+x' &= y'     & X'&=Y' & a'&= b\\
+x+x'&=y+y' & X+X'&=Y+Y' & a'b&=c'b
+\end{align}
+
+\section{Unterschiedliche Umgebungen}
+Das ist equation*.
+\begin{equation*}
+a=b
+\end{equation*}
+Das ist equation.
+\begin{equation}
+a=b
+\end{equation}
+Das ist equation mit split.
+\begin{equation}\label{xx}
+\begin{split}
+a& =b+c-d\\
+ & \quad +e-f\\
+ & =g+h\\
+ & =i
+\end{split}
+\end{equation}
+Das ist multiline.
+\begin{multline}
+a+b+c+d+e+f\\
++i+j+k+l+m+n
+\end{multline}
+Das ist gather.
+\begin{gather}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather}
+Das ist align.
+\begin{align}
+a_1& =b_1+c_1\\
+a_2& =b_2+c_2-d_2+e_2
+\end{align}
+Das ist nochmal align.
+\begin{align}
+a_{11}& =b_{11}&a_{12}& =b_{12}\\
+a_{21}& =b_{21}&a_{22}& =b_{22}+c_{22}
+\end{align}
+Das ist flalign*.
+\begin{flalign*}
+a_{11}& =b_{11} & a_{12}& =b_{12}\\
+a_{21}& =b_{21} & a_{22}& =b_{22}+c_{22}
+\end{flalign*}
+
+\end{document}

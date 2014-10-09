@@ -80,13 +80,40 @@ Die Lösung ist \verb|\LaTeX\ hilft|. Dies gibt \LaTeX\ hilft.
 \item Wir konzentrieren uns auf Mathe-Umgebungen und Aufzählungen
 \end{enumerate}
 
+\section{Aufzählungen}
+Hier einfach nur kurz itemize und enumerate erklären
+
 \section{Mathe-Umgebungen}
 \begin{itemize}
 \item Formeln stehen im Fließtext und abgesetzt. Abgesetzte Formeln haben eine Nummerierung oder auch nicht.
 \item Formeln im Fließtext mit \verb|$ ... $|.
 \item abgesetzte Formeln mit \verb|\begin{ailgn} ... \end{align}| und \verb|\begin{ailgn*} ... \end{align*}|. Mit \verb|\\| macht man eine neue Zeile und mit \verb|\nonumber| bekommt die aktuelle Formel keine Nummer.
-\item Verwende die Pakete amsmath (bessere Umgebungen, Dokumentation: \url{ftp://ftp.ams.org/ams/doc/amsmath/amsldoc.pdf}), amsfonts (fraktur, mehr Zeichen, ...) und amssymb (mehr Zeichen \url{http://de.wikibooks.org/wiki/LaTeX-Kompendium:_amssymb})
-\item Verwende nicht \emph{equarray}! 
+\item Verwende die Pakete amsmath (bessere Umgebungen, Dokumentation: \url{ftp://ftp.ams.org/ams/doc/amsmath/amsldoc.pdf}), amsfonts (fraktur, mehr Zeichen, ...) und amssymb (mehr Zeichen \url{http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf})
+\item \lstinputlisting{Bsp2_Matheumgebungen.tex}
+\item Indices (auch verschachelt [System erklären, dass immer nur ein Zeichen als Index genommen wird], Brüche, Summen, Produkte (prod), cdot, ldot(s), Integral, Wurzeln, Matrizen
+\item Sonderzeichen \verb|\(1 \le 2 \ge 0 \neq 4\), \quad \(1 \ll 10^{20} \gg 10^{-5} \pm \mp\)|:
+  \begin{align*}
+  1 \le 2 \ge 0 \neq 4, \quad 1 \ll 10^{20} \gg 10^{-5} \pm \mp
+  \end{align*}
+\item Matrizen (\url{http://www.kkittel.de/wiki/doku.php?id=mathematik:matrizen})
+\item griechische Buchstaben
+\item Formatiere mathematischen Text
+  \begin{itemize}
+  \item mathrm: für Einheiten, ...
+  \item mathit: kursiv (Zahlen auch!)
+  \item mathbf: für Vektoren
+  \item mathfrak: Fraktur z.B. für Lie-Algebren
+  \item mathcal
+  \item mathbb
+  \item mathscr (braucht mathrsfs-Package)
+  \end{itemize}
+\item Text in Matheumgebung mit \verb|\text{ ... }|.
+
+Alles Wichtige steht hier: \url{http://en.wikibooks.org/wiki/LaTeX/Mathematics#Matrices_in_running_text}.
+
 \end{itemize} 
+
+Aufgabe: Suche dir einen Abschnitt aus dem Seminarvortrag von Philipp und texe es nach. Alternativ natürlich auch gerne eine eigene Rechnung etc.
+
 
 \end{document}
