@@ -82,6 +82,16 @@ Die Lösung ist \verb|\LaTeX\ hilft|. Dies gibt \LaTeX\ hilft.
 
 \section{Aufzählungen}
 Hier einfach nur kurz itemize und enumerate erklären. Und description:
+\begin{lstlisting}
+\begin{description}
+  \item[First] \hfill \\
+  The first item
+  \item[Second] \hfill \\
+  The second item
+  \item[Third] \hfill \\
+  The third etc \ldots
+\end{description}
+\end{lstlisting}
 \begin{description}
   \item[First] \hfill \\
   The first item
@@ -97,7 +107,7 @@ Hier einfach nur kurz itemize und enumerate erklären. Und description:
 \item Formeln im Fließtext mit \verb|$ ... $|.
 \item abgesetzte Formeln mit \verb|\begin{ailgn} ... \end{align}| und \verb|\begin{ailgn*} ... \end{align*}|. Mit \verb|\\| macht man eine neue Zeile und mit \verb|\nonumber| bekommt die aktuelle Formel keine Nummer.
 \item Verwende die Pakete amsmath (bessere Umgebungen, Dokumentation: \url{ftp://ftp.ams.org/ams/doc/amsmath/amsldoc.pdf}), amsfonts (fraktur, mehr Zeichen, ...) und amssymb (mehr Zeichen \url{http://milde.users.sourceforge.net/LUCR/Math/mathpackages/amssymb-symbols.pdf})
-\item \lstinputlisting{Bsp2_Matheumgebungen.tex}
+\item Unterschiedliche Umgebungen am Beispiel von \verb|Bsp2_Matheumgebungen.tex| erklären
 \item Indices (auch verschachelt [System erklären, dass immer nur ein Zeichen als Index genommen wird], Brüche, Summen, Produkte (prod), cdot, ldot(s), Integral, Wurzeln, Matrizen
 \item Sonderzeichen \verb|\(1 \le 2 \ge 0 \neq 4\), \quad \(1 \ll 10^{20} \gg 10^{-5} \pm \mp\)|:
   \begin{align*}
@@ -116,17 +126,17 @@ Hier einfach nur kurz itemize und enumerate erklären. Und description:
   \item mathscr (braucht mathrsfs-Package)
   \end{itemize}
 \item Mehrere Fälle (benötigt das Paket cases):
-\begin{verbatim}
+\begin{lstlisting}
 \begin{numcases}{E = mc^2}
 m \neq 0 & Masselose Teilchen\\
-m < 0 & Antiteilchen (?)\\
-m > 0 & normale Teilchen
+m < 0 & Tachyonen\\
+m > 0 & Teilchen
 \end{numcases}
-\end{verbatim}
-\begin{numcases}{E = mc^2}
-m \neq 0 & Masselose Teilchen\\
-m < 0 & Antiteilchen (?)\\
-m > 0 & normale Teilchen
+\end{lstlisting}
+\begin{numcases}{m^2  }
+= 0 & Masselose Teilchen\\
+< 0 & Tachyonen\\
+> 0 & Teilchen
 \end{numcases}
 \item Text in Matheumgebung mit \verb|\text{ ... }|.
 \item Abstände mit Komma, Semikolon, quad, qquad oder hspace
@@ -135,6 +145,13 @@ m > 0 & normale Teilchen
 \[(\frac{\int^a x dx}{\sum_{n=1} x})\]
 Vs. 
 \[ \left( \frac{\int^a x dx}{\sum_{n =1} x} \right) \]
+\item Commands definieren für Befehle, die man oft schreiben müsste.
+\begin{lstlisting}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\end{lstlisting}
 
 \end{itemize} 
 

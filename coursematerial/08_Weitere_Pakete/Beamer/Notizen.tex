@@ -1,7 +1,13 @@
 \documentclass[11pt,a4paper]{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
-\usepackage{amsmath,cases,hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Philipp Arras}
+
 %_______________________________________________________________________________
 % Listings
 %_______________________________________________________________________________
@@ -39,57 +45,15 @@ breaklines=true,                 % sets automatic line breaking
   tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Philipp Arras}
-\title{\LaTeX Kurs: 07 Nützliche Pakete}
-\begin{document}
 
+
+
+\title{\LaTeX -Kurs: 08 Weitere Pakete (Beamer)}
+\begin{document}
 \maketitle
 
-Wir kennen schon: babel, blindtext, geometry, graphics, biblatex, amsmath. Jetzt kommen noch neue Pakete dazu.
 \begin{itemize}
-\item Allgemein
-	\begin{itemize}
-	\item hyperref \verb|\href{http://www.der-postillion.de}{angezeigter Text}| oder \verb|\url{ .. }|
-	\item paralist (kompakte Aufzählungen, mehrere Beispiele)
-	\item Briefe mit KOMA (\url{http://texdoc.net/texmf-dist/doc/latex/koma-script/scrguide.pdf}, Beispiele im Ordner \verb|07_Nützliche_Pakete|)
-	\item europecv, moderncv
-	\item setspace (für doppelten Zeilenabstand) \verb|\usepackage[singlespacing]{setspace}| oder \verb|\usepackage[onehalfspacing]{setspace}| oder \verb|\usepackage[doublespacing]{setspace}|
-	\item csquotes (für internationale, auch deutsche, Anführungszeichen). Das gibt es auch als Umgebung.
-	\item mdframed
-	\lstinputlisting{mdframed.tex}
-	\end{itemize}
-\item Mathe
-	\begin{itemize}
-	\item amsthm 
-		\lstinputlisting{amsthm.tex}
-	\item esvect (schöne Vektoren)
-	\item nicefrac (schöne Brüche)
-	\end{itemize}
-\item Informatik
-	\begin{itemize}
-	\item listings (Beispiel vorbereitet)
-	\end{itemize}
-\item Physik
-	\begin{itemize}
-	\item feyn (Beispiel vorbereitet) oder alternativ feynmp (\url{http://www.ctan.org/tex-archive/macros/latex/contrib/feynmf/}, schwieriger zu installieren, einfacher zu bedienen)
-	\item siunitx (praktisch fürs Praktikum)
-	\end{itemize}
-\item Sonstiges
-	\begin{itemize}
-	\item tikz (später)
-	\item beamer (streng genommen kein Paket sondern eine Dokumentenklasse)
-	\end{itemize}
+\item Eigentlich ist \LaTeX\ nicht dazu geeignet Präsentationen oder jegliche Dokumente, wo es auf Design ankommt, zu erstellen. Wenn man jedoch sehr gut strukturierten Inhalt hat, kann man mit der Dokumentenklasse \emph{beamer} auch Bildschirmpräsentationen in Form von 
 \end{itemize}
-
-Aufgabe: Probiere folgende Pakete aus:
-\begin{itemize}
-\item setspace (Standard für Bachelorarbeiten etc. ist onehalfspacing), 
-\item csquotes
-\item amsthm
-\item nicefrac
-\end{itemize}
-
-
 
 \end{document}
