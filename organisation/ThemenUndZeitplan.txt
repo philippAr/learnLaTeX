@@ -11,7 +11,7 @@
     Mathe/Aufzählungen          P   fertig
     Tabellen/Figuren   		F
 05 Workflow                     F   fertig
-06 Fußnoten/Bibliographie       F
+06 Fußnoten/Bibliographie       F   fertig
 07 Nützliche Pakete             P   fertig
 08 Weitere Pakete               P
 

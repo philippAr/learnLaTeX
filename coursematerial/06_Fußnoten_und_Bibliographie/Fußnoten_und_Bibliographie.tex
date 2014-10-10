@@ -27,6 +27,127 @@
 %\end{frame}
 
 \section{Fußnoten und Bibliographie}
+\begin{frame}[fragile]{Fußnoten}
+\begin{itemize}
+\item Zusätzlicher Text, der nicht ins Hauptdokument passt\\
+(für besseren Textfluss)
+\item \verb~\footnote{...}~
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Erstellen von Bibliographien}
+\begin{itemize}
+\item Verweise auf Literatur sollten weitestgehend automatisiert werden
+\item[$\Rightarrow$] Vermeidet Fehler
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Erstellen von Bibliographien}
+\begin{itemize}
+\item Verweise auf Literatur sollten weitestgehend automatisiert werden
+\item Anordnen und Sortieren kann externern Programmen und Paketen überlassen werden
+\item Externe Programme basieren auf (selbst erstellter) Datenbank
+\item Bib{\TeX} bzw. \texttt{biber} \emph{sortieren} Einträge
+\item Pakete wie \texttt{biblatex} oder \texttt{natbib} \emph{formatieren} die Literaturangaben und -verzeichnisse
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Beispiel Bibliographie}
+\emph{(siehe }\texttt{exmpl-biber.pdf}\emph{)}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturverweise ohne externe Hilfe}
+\begin{itemize}
+\item Intern mittels \texttt{thebibliography}\\
+(am Ende des Dokuments):
+\end{itemize}
+\begin{verbatim}
+...
+
+\begin{thebibliography}{widest entry}
+\bibitem[GK06]{GreeneKrantz} R. Greene und S. %
+  Krantz. \textit{Function Theory of one Complex %
+  Variable}. 3. ed. AMS, 2006.
+\bibitem[Kas14]{Kasten} ...
+\bibitem[RS00]{RemmertSchumacher} ...
+\end{thebibliography}
+
+\end{document}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturverweise ohne externe Hilfe}
+\begin{verbatim}
+\begin{thebibliography}{GK06}
+\bibitem[GK06]{GreeneKrantz} R. Greene und S. %
+  Krantz. \textit{Function Theory of one Complex %
+  Variable}. 3. ed. AMS, 2006.
+\end{thebibliography}
+
+\end{document}
+\end{verbatim}
+\begin{itemize}
+\item \verb~\cite{...}~ setzt (automatisierten) Literaturverweis\\
+Beispiel: \emph{siehe }\texttt{exmpl-thebibliography.pdf}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturverweise ohne externe Hilfe}
+\begin{verbatim}
+\begin{thebibliography}{GK06}
+\bibitem[GK06]{GreeneKrantz} R. Greene und S. %
+  Krantz. \textit{Function Theory of one Complex %
+  Variable}. 3. ed. AMS, 2006.
+\end{thebibliography}
+
+\end{document}
+\end{verbatim}
+\begin{itemize}
+\item \verb~\cite{...}~ setzt (automatisierten) Literaturverweis\\
+\item[$-$] Nicht wirklich elegant
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Literaturverweise mit externer Hilfe}
+\begin{itemize}
+\item Separate \texttt{.bib}-Datei:
+\end{itemize}
+\begin{verbatim}
+% tinybib.bib
+
+@Book{GreeneKrantz,
+ author    ={Greene, R. and Krantz, S.},
+ title     ={Function Theory of one Complex %
+   Variable},
+ year      ={2006},
+ publisher ={AMS},
+ edition   ={3. ed.}}
+                                                       
+...
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Literaturverweise mit externer Hilfe}
+\begin{itemize}
+\item Separate \texttt{.bib}-Datei
+\item Programm Bib{\TeX} übernimmt Sortierung und Verwaltung der Einträge
+\item \texttt{biber} ist als neuste Bib{\TeX}-Weiterentwicklung utf8-fähig und sehr flexibel einsetzbar – allerdings nur mit Paket \texttt{biblatex}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Literaturverweise mit externer Hilfe}
+\begin{itemize}
+\item Separate \texttt{.bib}-Datei
+\item Programm Bib{\TeX} übernimmt Sortierung und Verwaltung der Einträge
+\item \texttt{biber} ist als neuste Bib{\TeX}-Weiterentwicklung utf8-fähig und sehr flexibel einsetzbar – allerdings nur mit Paket \texttt{biblatex}
+\item[$+$] (Fast) fertige Bib{\TeX}-Einträge können über \texttt{http://arxiv.org/}, \texttt{http://scholar.google.com/} oder auch HEIDI generiert werden
+\end{itemize}
+\end{frame}
+
+\begin{frame}{biber in Aktion}
+\emph{(siehe }\texttt{exmpl-biber.tex}\emph{ und }\texttt{tiny.bib}\emph{)}
+\end{frame}
+
 \begin{frame}{Übung}
 Sucht euch ein Buch oder einen Artikel aus; erstellt eine kurze \texttt{.bib}-Datei mit den entsprechenden Angaben. (Pflicht- und Wahlfelder der Grundtypen findet ihr in der \texttt{biblatex}-Doku ab Seite 7.) Schreibt einen kurzen Satz mit Verweis auf euer Buch bzw. euren Artikel und fügt diesem eine Fußnote hinzu.
 \end{frame}
