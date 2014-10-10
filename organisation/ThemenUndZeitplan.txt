@@ -9,7 +9,7 @@
 03 Einführung                   P   fertig
 04 Umgebungen 
     Mathe/Aufzählungen          P   fertig
-    Tabellen/Figuren   		F
+    Tabellen/Figuren   		F   fertig
 05 Workflow                     F   fertig
 06 Fußnoten/Bibliographie       F   fertig
 07 Nützliche Pakete             P   fertig
