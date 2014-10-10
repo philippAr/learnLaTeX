@@ -53,7 +53,45 @@ breaklines=true,                 % sets automatic line breaking
 \maketitle
 
 \begin{itemize}
-\item Eigentlich ist \LaTeX\ nicht dazu geeignet Präsentationen oder jegliche Dokumente, wo es auf Design ankommt, zu erstellen. Wenn man jedoch sehr gut strukturierten Inhalt hat, kann man mit der Dokumentenklasse \emph{beamer} auch Bildschirmpräsentationen in Form von 
+\item Eigentlich ist \LaTeX\ nicht dazu geeignet Präsentationen oder jegliche Dokumente, wo es auf Design ankommt, zu erstellen. Wenn man jedoch sehr gut strukturierten Inhalt hat, kann man mit der Dokumentenklasse \emph{beamer} auch Bildschirmpräsentationen in Form von PDFs erstellen.
+\item Hierfür startet man mit folgendem Template: \lstinputlisting{Beamer-Template.tex}
+\item Alle Elemente erklären
+  \begin{itemize}
+    \item Es gibt unterschiedliche Themes (\url{http://deic.uab.es/~iblanes/beamer_gallery/})
+    \item Mit \verb|\titlepage| kann man eine Titelfolie erstellen
+    \item Mit Tableofcontents kommt ein Inhaltsverzeichnis. In diesem werden nicht die Folientitel sondern wie in einem normalen Dokument die Abschnitte angezeigt.
+    \item Jede Folie besteht aus der Umgebung frame. Als zusätzliches Argument kann ein Folientitel und auch Untertitel ausgegeben werden. Das ist unbedingt empfehlenswert!
+    \item Aufbau einer Folie:
+    \begin{lstlisting}
+\begin{frame}
+  \frametitle{There Is No Largest Prime Number}
+  \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+  \begin{theorem}
+    There is no largest prime number.
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}
+    \item<1-> Suppose $p$ were the largest prime number.
+    \item<2-> Let $q$ be the product of the first $p$ numbers.
+    \item<3-> Then $q + 1$ is not divisible by any of them.
+    \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+      number not in the first $p$ numbers.\qedhere
+    \end{enumerate}
+\end{proof}
+  \uncover<4->{The proof used \textit{reductio ad absurdum}.}
+\end{frame}
+    \end{lstlisting}
+    \item Mit diesem Paket können ganze PDF-Seiten als Folien eingefügt werden.
+    \begin{lstlisting}
+\usepackage{pdfpages}
+{
+   \setbeamercolor{background canvas}{bg=}
+   \includepdf{somepdfimages.pdf}
+}
+    \end{lstlisting}
+    
+
+  \end{itemize}	
 \end{itemize}
 
 \end{document}

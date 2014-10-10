@@ -35,5 +35,72 @@
 \end{enumerate}
 \end{frame}
 
+\section{Primzahlen}
+\begin{frame}
+  \frametitle{There Is No Largest Prime Number}
+  \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+  \begin{theorem}
+    There is no largest prime number.
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}
+    \item<1-> Suppose $p$ were the largest prime number.
+    \item<2-> Let $q$ be the product of the first $p$ numbers.
+    \item<3-> Then $q + 1$ is not divisible by any of them.
+    \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+      number not in the first $p$ numbers.\qedhere
+    \end{enumerate}
+\end{proof}
+  \uncover<4->{The proof used \textit{reductio ad absurdum}.}
+\end{frame}
 
+\begin{frame}
+  \frametitle{What’s Still To Do?}
+  \begin{block}{Answered Questions}
+    How many primes are there?
+  \end{block}
+  \begin{block}{Open Questions}
+    Is every even number the sum of two primes?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What’s Still To Do?}
+  \begin{columns}
+    \column{.5\textwidth}
+      \begin{block}{Answered Questions}
+        How many primes are there?
+      \end{block}
+    \column{.5\textwidth}
+      \begin{block}{Open Questions}
+        Is every even number the sum of two primes?
+      \end{block}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{An Algorithm For Finding Primes Numbers.}
+\begin{semiverbatim}
+\uncover<1->{\alert<0>{int main (void)}}
+\uncover<1->{\alert<0>{\{}}
+\uncover<1->{\alert<1>{  \alert<4>{std::}vector<bool> is_prime (100, true);}}
+\uncover<1->{\alert<1>{  for (int i = 2; i < 100; i++)}}
+\uncover<2->{\alert<2>{if (is_prime[i])}}
+\uncover<2->{\alert<0>{  \{}}
+\uncover<3->{\alert<3>{\}}}
+\uncover<3->{\alert<3>{\alert<4>{std::}cout << i << " ";}}
+\uncover<3->{\alert<3>{for (int j = i; j < 100;}}
+\uncover<2->{\alert<0>{is_prime [j] = false, j+=i);}}
+\uncover<1->{\alert<0>{  return 0;}}
+\uncover<1->{\alert<0>{\}}}
+\end{semiverbatim}
+
+
+
+
+
+
+  \visible<4->{Note the use of \alert{\texttt{std::}}.}
+\end{frame}
 \end{document}
