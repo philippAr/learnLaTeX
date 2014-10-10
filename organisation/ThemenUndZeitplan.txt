@@ -9,9 +9,9 @@
 03 Einführung                   P   fertig
 04 Umgebungen 
     Mathe/Aufzählungen          P   fertig
-    Tabellen/Fußnoten/Figuren   F
+    Tabellen/Figuren   		F
 05 Workflow                     F
-06 Bibliographie                F
+06 Fußnoten/Bibliographie       F
 07 Nützliche Pakete             P   fertig
 08 Weitere Pakete               P
 
@@ -41,11 +41,10 @@ AB HIER IMMER ZUERST INFOTEIL DANN KURZE AUFGABE
     4.1 Matheumgebungen (Newcommand, nicefrac, Referenz)
     4.2 Aufzählungen (enumerate [mit Paket enumerate lokal Aufzählungszeichen ändern], itemize)
     4.3 Tabellen (topline, midline, bottomline, p{...}, centering)
-    4.4 Fußnoten (nur ganz kurz)
-    4.5 Figuren: importieren einer Grafik (draft, subfigure). Mit graphicspath Überleitung zum nächsten Thema.
+    4.4 Figuren: importieren einer Grafik (draft, subfigure). Mit graphicspath Überleitung zum nächsten Thema.
 
 5 Wie mache ich ein großes Dokument übersichtlich? (Ordnerstruktur, input/include, evtl. Seminar von Florian vorführen)
-6 Bibliographie mit biber (bibtex-Eintrag von arXiv, Heidi und Google Scholar)
+6 Fußnoten (kurz); Bibliographie mit biber (bibtex-Eintrag von arXiv, Heidi und Google Scholar)
 
 7 nützliche Pakete
     7.1 setspace (für z.B. doppelten Zeilenabstand)
@@ -64,7 +63,7 @@ AB HIER IMMER ZUERST INFOTEIL DANN KURZE AUFGABE
 3 Philipp         1 h 
 4.1/4.2 Philipp   1 h
 4.3-4.4 Florian   30 min
-4.5-5/6 Florian   1 h
+5/6 Florian   	  1 h
 7 Philipp         30 min
 8 Philipp         1 h
 -----------------------------
