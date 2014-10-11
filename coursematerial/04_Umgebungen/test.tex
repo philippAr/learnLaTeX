@@ -1,0 +1,124 @@
+\documentclass[a4paper,ngerman]{scrartcl} % 11pt voreingestellt bei scrbook, scrreprt sowie scrartcl; a4paper evtl. überflüssig: jenachdem, was bei der TeX Live Installation als Standard gesetzt wurde
+\author{Philipp Arras}
+\title{Umgebungen}
+%\date{Datum}
+
+\usepackage[utf8]{inputenc}
+\usepackage{babel} % ngerman bereits oben gewählt
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % Ginge auch mit margin=2cm
+
+\usepackage{blindtext}
+
+\begin{document}
+\maketitle
+
+\section{Aufzählungen}
+
+\subsection{Die Itemize-Umgebung}
+
+\blindtext
+\begin{itemize}
+\item Das ist unser erster Punkt.
+\item Und noch einer.
+\end{itemize}
+\blindtext
+
+
+\subsection{Die Enumerate-Umgebung}
+\blindtext
+\begin{enumerate}
+\item Jetzt machen wir eine nummerierte Liste.
+\item Der zweite Eintrag.
+\end{enumerate}
+\blindtext
+
+\subsection{Verschachtelte Umgebungen}
+
+\begin{itemize}
+\item Hallo
+	\begin{enumerate}
+	\item Enumerate Umgebugn
+	\item Hallo
+	\item World
+	\end{enumerate}
+\item dsfjkl
+\item jkjkkjkj
+\end{itemize}
+
+
+\section{Matheumgebungen}
+
+\subsection{Im Fließtext}
+
+Was wir schon immer mal lernen wollten, war der Satz des Pythagoras: $a^2+b^2=c^2$. Und das war es auch schon. Aber vielleicht wollen wir eine Formel auch mal ein bisschen größer sehen:
+\begin{align}
+\int x^2 dx = \frac{x^3}{3} 
+\end{align}
+Und danach geht es mit dem Text weiter.
+\blindtext
+\begin{align}
+\int \sin (x) dx = - \cos(x)
+\end{align}
+
+\subsection{Ohne Nummerierung}
+
+Was wir schon immer mal lernen wollten, war der Satz des Pythagoras: $a^2+b^2=c^2$. Und das war es auch schon. Aber vielleicht wollen wir eine Formel auch mal ein bisschen größer sehen:
+\begin{align*}
+\int x^2 dx = \frac{x^3}{3} 
+\end{align*}
+Und danach geht es mit dem Text weiter.
+\blindtext
+\begin{align*}
+\int \sin (x) dx = - \cos(x)
+\end{align*}
+
+\subsection{Indices}
+\begin{align}
+\sum_{n=1}^\infty a_n = \frac{\pi}{6}
+\end{align}
+
+
+\subsection{Die Align-Umgebung in Aktion}
+\begin{align}
+(x-1)(x-2) &= x^2-x-2x+2\\
+&= x^2-3x+2
+\end{align} 
+
+\subsection{Eine Liste von Mathe-Befehlen}
+\begin{align}
+1 \leq 2 , 3 \geq 1\\
+\pm \\
+0\neq 1
+\end{align}
+
+Die Zahlen:
+\begin{align}
+\mathbb{R}, \mathbb{Q}, \mathbb{N}, \mathbb{Z}
+\end{align}
+
+\begin{align}
+\mathfrak{a}
+\end{align}
+
+Indices verschalten
+
+Griechische Buchstaben: $\alpha \beta \gamma \Gamma$
+
+\begin{align}
+\left(
+   \begin{array}{ccc}
+     a_{11} & \cdots & a_{1n} \\
+     \vdots & \ddots & \vdots \\
+     a_{m1} & \cdots & a_{mn}
+   \end{array}
+\right)
+\end{align}
+
+
+
+
+
+
+\end{document}
