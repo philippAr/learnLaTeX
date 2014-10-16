@@ -1,4 +1,4 @@
-﻿Eine kurze Einführung in Git
+Eine kurze Einführung in Git
 
 0. sudo apt-get install git
 1. Account bei github erstellen
@@ -13,7 +13,7 @@
 7. Editiere eine Datei, z.B. diese, und speichere sie
 7.1 TESTÄNDERUNG
 8. git add introductionGit.txt
-	mit diesem Befehl wird die neue Version der Datei gestaged. Das ist ein Zwischenschritt, der für Anfänger überflüssig erscheint, später aber sehr hilfreich sein kann. Alternativ kann man ins Hauptverzeichnis wechseln (cd ~/repos/learnLatex) und git add -A ausführen. Dann werden alle neuen  und veränderten Dateien gestaged
+	mit diesem Befehl wird die neue Version der Datei gedstaged. Das ist ein Zwischenschritt, der für Anfänger überflüssig erscheint, später aber sehr hilfreich sein kann. Alternativ kann man ins Hauptverzeichnis wechseln (cd ~/repos/learnLatex) und git add -A ausführen. Dann werden alle neuen  und veränderten Dateien gestaged
 9. git commit -m "Hier muss eine Nachricht hin, die beschreibt, was geändert wurde."
 	Mit diesem Befehl werden alle gestageten Dateien commitet, d.h. der "Geschichtsschreibung" hinzugefügt. Ab jetzt hast du die Möglichkeit später genau diesen Zustand deines ganzen Repositories wiederherzustellen
 10. git push origin master
